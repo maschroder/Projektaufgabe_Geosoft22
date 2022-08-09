@@ -30,3 +30,6 @@ function setMarker(my_results) {
       
   }
 }
+
+var toolbar = L.Toolbar();
+   toolbar.addToolbar(map);
