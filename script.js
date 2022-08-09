@@ -11,18 +11,23 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 L.geoJSON(gebirge).addTo(map);
 setMarker(gebirge)
 
-setMarker(gebirge)
 
-var busItems = new L.FeatureGroup();
-map.addLayer(busItems);
+var popUps = new L.FeatureGroup();
+map.addLayer(popUps);
 
 function setMarker(my_results) {
   for (let i = 0; i < my_results.features.length; i++) {
     let feature = my_results.features[i];
       let coords = feature.geometry.coordinates
     console.log(coords)
+      let name = feature.properties.name
+      let hoehe = feature.properties.hoehe
+      let url = feature.properties.url
+      let beschreibung = feature.properties.beschreibung
       let marker = L.marker([coords[1], coords[0]])
-          .bindPopup(feature.properties.name + '<br>' + "Höhe: " + feature.properties.hoehe + "m")
-      busItems.addLayer(marker)
+          .bindPopup("Name: " + name + '<br>' + "Höhe: " + hoehe + "m" + '<br>' + "Link: " + url + '<br>' + "Beschreibung: " + beschreibung)
+        
+          map.addLayer(marker)
+      
   }
 }
