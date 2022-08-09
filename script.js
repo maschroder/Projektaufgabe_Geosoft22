@@ -9,7 +9,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 L.geoJSON(gebirge).addTo(map);
-setMarker(gebirge)
+
 
 var busItems = new L.FeatureGroup();
 map.addLayer(busItems);
@@ -20,7 +20,7 @@ function setMarker(my_results) {
       let coords = feature.geometry.coordinates
     console.log(coords)
       let marker = L.marker([coords[1], coords[0]])
-          .bindPopup(feature.properties.name + '<br>' + "Entfernung: " + feature.properties.hoehe + "m")
+          .bindPopup(feature.properties.name + '<br>' + "Hoehe: " + feature.properties.hoehe + "m")
     console.log(marker)
       busItems.addLayer(marker)
   }
