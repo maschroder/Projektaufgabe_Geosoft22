@@ -9,14 +9,19 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 L.geoJSON(gebirge).addTo(map);
+setMarker(gebirge)
 
-var popup = L.popup();
+var busItems = new L.FeatureGroup();
+map.addLayer(busItems);
 
-function onMapClick(e) {
-    popup
-        .setLatLng(e.latlng)
-        .setContent("You clicked the map at " + e.latlng.toString())
-        .openOn(map);
+function setMarker(my_results) {
+  for (let i = 0; i < my_results.features.length; i++) {
+    let feature = my_results.features[i];
+      let coords = feature.geometry.coordinates
+    console.log(coords)
+      let marker = L.marker([coords[1], coords[0]])
+          .bindPopup(feature.properties.name + '<br>' + "Entfernung: " + feature.properties.hoehe + "m")
+
+      busItems.addLayer(marker)
+  }
 }
-
-map.on('click', onMapClick);
