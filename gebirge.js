@@ -1,4 +1,4 @@
-{
+var gebirge = {
     "type": "FeatureCollection",
     "features": [
         {
