@@ -26,7 +26,7 @@ map.on(L.Draw.Event.CREATED, function (e) {
     var type = e.layerType,
         layer = e.layer;
     if (type === 'marker') {
-        
+        // Koordinaten speichern und Formular öffnen, zum Hinzufügen von neuen Gebirgen
     }
     // Do whatever else you need to. (save to db; add to map etc)
     map.addLayer(layer);
