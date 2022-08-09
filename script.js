@@ -21,7 +21,7 @@ function setMarker(my_results) {
     console.log(coords)
       let marker = L.marker([coords[1], coords[0]])
           .bindPopup(feature.properties.name + '<br>' + "Entfernung: " + feature.properties.hoehe + "m")
-
+    console.log(marker)
       busItems.addLayer(marker)
   }
 }
