@@ -19,7 +19,6 @@ function setMarker(my_results) {
   for (let i = 0; i < my_results.features.length; i++) {
     let feature = my_results.features[i];
       let coords = feature.geometry.coordinates
-    console.log(coords)
       let name = feature.properties.name
       let hoehe = feature.properties.hoehe
       let url = feature.properties.url

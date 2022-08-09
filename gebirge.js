@@ -5,7 +5,7 @@ var gebirge = {
             "type": "Feature",
             "properties": {
                 "name": "Mont Blanc",
-                "hoehe": "4810m",
+                "hoehe": "4810",
                 "url" : "https://de.wikipedia.org/wiki/Mont_Blanc",
                 "beschreibung" : "Berg an der Grenze zwischen Frankreich und Italien"
 
