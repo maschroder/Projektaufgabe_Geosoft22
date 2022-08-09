@@ -1,4 +1,4 @@
-var gebirge = {
+{
     "type": "FeatureCollection",
     "features": [
         {
@@ -16,8 +16,8 @@ var gebirge = {
                     6.864325,
                     45.832544
                 ]
-            },
+            }
         
-        },
+        }
     ]
 }
