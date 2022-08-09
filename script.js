@@ -1,11 +1,39 @@
 "use strict";
-var map = L.map('map').setView([54.805, 7.5], 3.5);
+var map = L.map('map',{drawControl: false}, {editable: true}).setView([54.805, 7.5], 3.5);
 
 // Add base tiles
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-    attribution: '© OpenStreetMap'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+// FeatureGroup is to store editable layers
+var drawnItems = new L.FeatureGroup();
+map.addLayer(drawnItems);
+var drawControl = new L.Control.Draw({
+    draw: {
+        // disabling all shapes except for marker 
+        circle: false,
+        polygon: false,
+        rectangle: false,
+    },
+    edit: {
+        featureGroup: drawnItems
+    }
+});
+map.addControl(drawControl);
+
+map.on(L.Draw.Event.CREATED, function (e) {
+    var type = e.layerType,
+        layer = e.layer;
+    if (type === 'marker') {
+        
+    }
+    // Do whatever else you need to. (save to db; add to map etc)
+    map.addLayer(layer);
+ });
+
+
+
 
 
 L.geoJSON(gebirge).addTo(map);
