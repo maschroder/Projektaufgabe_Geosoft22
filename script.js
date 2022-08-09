@@ -9,7 +9,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 L.geoJSON(gebirge).addTo(map);
-
+setMarker(gebirge)
 
 setMarker(gebirge)
 
