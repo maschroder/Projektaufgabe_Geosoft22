@@ -1,1 +1,9 @@
-# Projektaufgabe_Geosoft22 von Derya Sen und Maike Schröder
+Beispiellösung 06
+
+Voraussetzungen:
+nodejs,
+mongodb-server auf localhost:27017
+
+starten:
+"npm install"
+"npm start"

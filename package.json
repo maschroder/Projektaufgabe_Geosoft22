@@ -1,19 +1,21 @@
 {
-  "name": "projektaufgabe_geosoft22",
-  "version": "1.0.0",
-  "description": "Projektaufgabe Geosoftware SS22",
-  "main": "app.js",
+  "name": "beispiell-sung-06",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "\"node ./bin/www\""
+    "start": "node ./bin/www",
+    "devStart": "nodemon ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/maschroder/Projektaufgabe_Geosoft22.git"
-  },
-  "author": "Derya Sen, Maike Schröder",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/maschroder/Projektaufgabe_Geosoft22/issues"
-  },
-  "homepage": "https://github.com/maschroder/Projektaufgabe_Geosoft22#readme"
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.8",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "leaflet": "^1.8.0",
+    "leaflet-draw": "^1.0.4",
+    "mongodb": "^4.7.0",
+    "morgan": "~1.9.1"
+  }
 }
