@@ -1,14 +1,14 @@
 async function main(){
-  const pois = await getPOI();
-  fillTable(pois);
+  const mountains = await getMountain();
+  fillTable(mountains);
 }
 
 /**
-* @desc get POIS
-* @desc fetches all POI from server
+* @desc get Mountains
+* @desc fetches all Mountains from server
 */
-async function getPOI(){
-  const response = await fetch('/poi').then(
+async function getMountain(){
+  const response = await fetch('/gebirge').then(
     response => response.json()
   ).then(data => {
     return data
@@ -30,7 +30,7 @@ function fillTable(data){
     tableHTML += `
     <tr>
     <td>${gebirge.properties.name}</td>
-    <td>${gebirge.geometry.coordinates[1]}, ${poi.geometry.coordinates[0]}</td>
+    <td>${gebirge.geometry.coordinates[1]}, ${gebirge.geometry.coordinates[0]}</td>
     <td>${gebirge.properties.hoehe}</td>
     <td>${gebirge.properties.beschreibung}</td>
     <td>${gebirge.properties.url}</td>
@@ -60,7 +60,7 @@ async function submitData(){
   const formData = new FormData();
   formData.append('ids', toDelete);
 
-  let redirect = await fetch('/poi', {
+  let redirect = await fetch('/gebirge', {
     method: 'DELETE',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({ids: toDelete})
