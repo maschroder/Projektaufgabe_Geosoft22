@@ -141,10 +141,10 @@ class MapInterface{
 
       //bind popup
       let popupString = `
-      <b>"Name: "${markerProperties.name}</b><br>
-      <b>${markerProperties.hoehe}</b><br>
-      <b>${markerProperties.beschreibung}</b><br>
-      <b>${markerProperties.url}</b><br>
+      <b>Name: ${markerProperties.name}</b><br>
+      <b>Höhe: ${markerProperties.hoehe}</b><br>
+      <b>Beschreibung: ${markerProperties.beschreibung}</b><br>
+      <b>URL: ${markerProperties.url}</b><br>
       </ul>
       `;
       marker.markerID = feature._id || null;
