@@ -26,16 +26,16 @@ function fillTable(data){
   const tableBody = document.getElementById("tableBody");
   let tableHTML = ""
 
-  for(poi of data.features){
+  for(gebirge of data.features){
     tableHTML += `
     <tr>
-    <td>${poi.properties.name}</td>
-    <td>${poi.geometry.coordinates[1]}, ${poi.geometry.coordinates[0]}</td>
-    <td>${poi.properties.hoehe}</td>
-    <td>${poi.properties.beschreibung}</td>
-    <td>${poi.properties.url}</td>
-    <td>${poi._id}</td>
-    <td><input type="checkbox" name="deleteID" value="${poi._id}"></td>
+    <td>${gebirge.properties.name}</td>
+    <td>${gebirge.geometry.coordinates[1]}, ${poi.geometry.coordinates[0]}</td>
+    <td>${gebirge.properties.hoehe}</td>
+    <td>${gebirge.properties.beschreibung}</td>
+    <td>${gebirge.properties.url}</td>
+    <td>${gebirge._id}</td>
+    <td><input type="checkbox" name="deleteID" value="${gebirge._id}"></td>
     </tr>
     `
   }
