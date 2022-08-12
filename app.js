@@ -28,7 +28,7 @@ app.use('/', indexRouter);
 app.use('/create', createRouter);
 app.use('/edit', editRouter);
 
-//dieser router existiert nicht um eine Seite zu servieren, sondern die POI-daten.
+//dieser router existiert nicht um eine Seite zu servieren, sondern die Gebirge-daten.
 app.use('/gebirge', gebirgeRouter);
 
 
