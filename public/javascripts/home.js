@@ -171,8 +171,8 @@ class MapInterface{
 const mainMapInterface = new MapInterface(
   {
     mapid: "map",
-    view: [51.96, 7.62],
-    zoom: 12,
+    view: [54.508, 7.5],
+    zoom: 3.5,
     baseMap: {
       tileLayer: 'https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',
       maxZoom: 18,
