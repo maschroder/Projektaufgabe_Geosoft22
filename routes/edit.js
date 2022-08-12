@@ -3,8 +3,8 @@ var router = express.Router();
 
 const { MongoClient } = require('mongodb');
 const client = new MongoClient("mongodb://127.0.0.1:27017"); // localhost == 127.0.0.1
-const dbName = "Aufgabe06";
-const collectionName = "poi";
+const dbName = "Projektaufgabe";
+const collectionName = "gebirge";
 
 /* GET edit page. */
 router.get('/', async function(req, res, next) {

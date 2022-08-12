@@ -6,7 +6,7 @@ const client = new MongoClient("mongodb://127.0.0.1:27017"); // localhost == 127
 const dbName = "Projektaufgabe";
 const collectionName = "gebirge";
 
-/* GET POIS. */
+/* GET Mountains. */
 router.get('/', async function(req, res, next) {
   //TODO
   await client.connect();
@@ -39,7 +39,7 @@ router.post('/', async function(req, res) {
     console.log("insufficient parameters. redirecting");
     res.redirect("/create");
   } else{
-    //TODO: poi object ersetllen
+    //TODO: gebirge object ersetllen
     let gebirge = {
       type: "Feature",
       properties:{

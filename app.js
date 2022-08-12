@@ -8,7 +8,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var createRouter = require('./routes/create');
 var editRouter = require('./routes/edit');
-var poiRouter = require('./routes/poi');
+var poiRouter = require('./routes/gebirge');
 
 var app = express();
 app.use(bodyParser.urlencoded({extended : true}));
