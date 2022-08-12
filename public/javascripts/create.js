@@ -69,7 +69,7 @@ class MapInterface{
         console.log("created marker");
         var popupString = `
           <form action="/gebirge" method="post">
-            <input "Name: " id="name" name="name" value="" placeholder="name">
+            <input id="name" name="name" value="" placeholder="name">
             <input type="hidden" id="lat" name="lat" value="${layer._latlng.lat}">
             <input type="hidden" id="lng" name="lng" value="${layer._latlng.lng}">
             <input id="hoehe" name="hoehe" value="" placeholder="hoehe">
