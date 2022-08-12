@@ -31,6 +31,9 @@ function fillTable(data){
     <tr>
     <td>${poi.properties.name}</td>
     <td>${poi.geometry.coordinates[1]}, ${poi.geometry.coordinates[0]}</td>
+    <td>${poi.properties.hoehe}</td>
+    <td>${poi.properties.beschreibung}</td>
+    <td>${poi.properties.url}</td>
     <td>${poi._id}</td>
     <td><input type="checkbox" name="deleteID" value="${poi._id}"></td>
     </tr>
