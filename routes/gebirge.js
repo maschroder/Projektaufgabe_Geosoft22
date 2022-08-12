@@ -14,7 +14,7 @@ router.get('/', async function(req, res, next) {
   const db = client.db(dbName);
   const collection = db.collection(collectionName);
 
-  pois = await collection.find({}).toArray((err, result) => {
+  mountains = await collection.find({}).toArray((err, result) => {
     if (err) {console.log(err); res.send("");}
 
     let markerArray = JSON.stringify(result)
