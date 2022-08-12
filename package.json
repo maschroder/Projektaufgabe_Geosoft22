@@ -1,0 +1,19 @@
+{
+  "name": "projektaufgabe_geosoft22",
+  "version": "1.0.0",
+  "description": "Projektaufgabe Geosoftware SS22",
+  "main": "app.js",
+  "scripts": {
+    "test": "\"node ./bin/www\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maschroder/Projektaufgabe_Geosoft22.git"
+  },
+  "author": "Derya Sen, Maike Schröder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maschroder/Projektaufgabe_Geosoft22/issues"
+  },
+  "homepage": "https://github.com/maschroder/Projektaufgabe_Geosoft22#readme"
+}
