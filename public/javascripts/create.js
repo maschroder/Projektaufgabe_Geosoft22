@@ -68,7 +68,7 @@ class MapInterface{
         drawnItems.addLayer(layer);
         console.log("created marker");
         var popupString = `
-          <form action="/poi" method="post">
+          <form action="/gebirge" method="post">
             <input id="name" name="name" value="" placeholder="name">
             <input type="hidden" id="lat" name="lat" value="${layer._latlng.lat}">
             <input type="hidden" id="lng" name="lng" value="${layer._latlng.lng}">
@@ -85,13 +85,13 @@ class MapInterface{
   }
 
   /**
-  * @desc clear POIS
+  * @desc clear Mountains
   * @desc removes all markers from the map when called
   */
-  clearPois(){
+  clearMountains(){
     //empty the indices and featureGroups
-    this.poiIndex = [];
-    this.poiGroup.clearLayers();
+    this.gebirgeIndex = [];
+    this.gebirgeGroup.clearLayers();
   }
 }
 
