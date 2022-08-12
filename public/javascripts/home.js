@@ -1,7 +1,7 @@
 async function main(){
-  //get pois und add to map
-  const pois = await getPOI();
-  mainMapInterface.addPois(pois)
+  //get mountains und add to map
+  const mounatins = await getMountain();
+  mainMapInterface.addMountains(mounatins)
 
   //fluff, dient nur dazu den marker zu öffnen der grade hingefügt wurde.
   let markerId = document.getElementById("markerID");
@@ -9,11 +9,11 @@ async function main(){
 }
 
 /**
-* @desc get POIS
-* @desc fetches all POI from server
+* @desc get Mountains
+* @desc fetches all mountains from server
 */
-async function getPOI(){
-  const response = await fetch('/poi').then(
+async function getMountain(){
+  const response = await fetch('/gebirge').then(
     response => response.json()
   ).then(data => {
     return data
@@ -55,8 +55,8 @@ class MapInterface{
     //create arrays that contain easily accessible references to all features of
     //each dataset
     //create groups wherein all the features of diffrent datasets will be contained
-    this.poiIndex = [];
-    this.poiGroup = new L.LayerGroup().addTo(this.map);
+    this.gebirgeIndex = [];
+    this.gebirgeGroup = new L.LayerGroup().addTo(this.map);
 
     this.drawnItems = new L.FeatureGroup().addTo(this.map);
 
@@ -103,20 +103,20 @@ class MapInterface{
   }
 
   /**
-  * @desc clear POIS
+  * @desc clear mountains
   * @desc removes all markers from the map when called
   */
-  clearPois(){
+  clearMountains(){
     //empty the indices and featureGroups
-    this.poiIndex = [];
-    this.poiGroup.clearLayers();
+    this.gebirgeIndex = [];
+    this.gebirgeGroup.clearLayers();
   }
 
   /**
-  * @desc adds pois to the map
+  * @desc adds mounatins to the map
   * @param {GeoJSON} featureCollection
   */
-  addPois(featureCollection){
+  addMountains(featureCollection){
     const markerOpacity = 0.4;
     for(let feature of featureCollection.features){
       let markerCoords = [feature.geometry.coordinates[1],
@@ -148,8 +148,8 @@ class MapInterface{
       marker.bindPopup(popupString);
 
       //add the marker to markergroup, so it shows up on the map
-      this.poiIndex.push(marker);
-      this.poiGroup.addLayer(marker);
+      this.gebirgeIndex.push(marker);
+      this.gebirgeGroup.addLayer(marker);
     }
   }
 
@@ -159,10 +159,10 @@ class MapInterface{
   * @param {string} id
   */
   openPopup(id){
-    //das setzt voraus dass featurecollection und poiGroup in selber reihenfolge sind
-    for(let i = 0;  i < this.poiIndex.length; i++){
-      if(this.poiIndex[i].markerID == id.value){
-        this.poiIndex[i].openPopup();
+    //das setzt voraus dass featurecollection und gebirgeGroup in selber reihenfolge sind
+    for(let i = 0;  i < this.gebirgeIndex.length; i++){
+      if(this.gebirgeIndex[i].markerID == id.value){
+        this.gebirgeIndex[i].openPopup();
       }
     }
   }
