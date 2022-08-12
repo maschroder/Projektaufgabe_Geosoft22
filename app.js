@@ -8,7 +8,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var createRouter = require('./routes/create');
 var editRouter = require('./routes/edit');
-var poiRouter = require('./routes/gebirge');
+var gebirgeRouter = require('./routes/gebirge');
 
 var app = express();
 app.use(bodyParser.urlencoded({extended : true}));
@@ -29,7 +29,7 @@ app.use('/create', createRouter);
 app.use('/edit', editRouter);
 
 //dieser router existiert nicht um eine Seite zu servieren, sondern die POI-daten.
-app.use('/poi', poiRouter);
+app.use('/gebirge', gebirgeRouter);
 
 
 app.use('/bootstrap', express.static("node_modules/bootstrap/dist"))
