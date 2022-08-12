@@ -1,7 +1,7 @@
 {
   "name": "projektaufgabe",
   "version": "0.0.0",
-  "description": "Interaktive Webanwendung zum Hinzufügen und zur Suche von Gebirgen in Europa."
+  "description": "Interaktive Webanwendung zum Hinzufügen und zur Suche von Gebirgen in Europa.",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
