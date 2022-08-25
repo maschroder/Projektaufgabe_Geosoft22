@@ -32,8 +32,8 @@ function fillTable(data){
     <td>${gebirge.properties.name}</td>
     <td>${gebirge.geometry.coordinates[1]}, ${gebirge.geometry.coordinates[0]}</td>
     <td>${gebirge.properties.hoehe}</td>
-    <td>${gebirge.properties.beschreibung}</td>
     <td>${gebirge.properties.url}</td>
+    <td>${gebirge.properties.beschreibung}</td>
     <td>${gebirge._id}</td>
     <td><input type="checkbox" name="deleteID" value="${gebirge._id}"></td>
     </tr>
