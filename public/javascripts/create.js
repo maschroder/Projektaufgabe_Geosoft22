@@ -84,7 +84,7 @@ class MapInterface {
     });
   }
 
-  pruefen() {
+  async pruefen() {
     a = document.createGebirge
     if (a.url.value.endsWith("org/w/api.php")) { 
       let myObject = await fetch(a.url.value);
@@ -93,8 +93,6 @@ class MapInterface {
      }
      
      
-
-
   }
 
 
