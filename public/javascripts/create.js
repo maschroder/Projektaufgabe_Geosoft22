@@ -89,7 +89,7 @@ class MapInterface {
     if (a.url.value.endsWith("org/w/api.php")) { 
       let myObject = await fetch(a.url.value);
       let myText = await myObject.text();
-      myDisplay(myText);
+      console.log(myText);
      }
      
      
