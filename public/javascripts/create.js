@@ -86,7 +86,7 @@ class MapInterface {
 
   async pruefen() {
     a = document.createGebirge
-    if (a.url.value.endsWith("org/w/api.php")) { 
+    if (a.url.value.endsWith("org/wiki/%")) { 
       let myObject = await fetch(a.url.value);
       let myText = await myObject.text();
       console.log(myText);
