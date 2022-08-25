@@ -68,7 +68,7 @@ class MapInterface {
         drawnItems.addLayer(layer);
         console.log("created marker");
         var popupString = `
-          <form name="createGebirge" action="/gebirge" method="post" onsubmit="pruefen()">
+          <form name="createGebirge" action="/gebirge" method="post" onsubmit="return pruefen()">
             <input id="name" name="name" value="" placeholder="name">
             <input type="hidden" id="lat" name="lat" value="${layer._latlng.lat}">
             <input type="hidden" id="lng" name="lng" value="${layer._latlng.lng}">
