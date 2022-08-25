@@ -46,8 +46,8 @@ router.post('/', async function(req, res) {
         shape: "Marker",
         name: req.body.name,
         hoehe: req.body.hoehe,
-        beschreibung: req.body.beschreibung,
-        url: req.body.url
+        url: req.body.url,
+        beschreibung: req.body.beschreibung
       },
       geometry:{
         type: "Point",
