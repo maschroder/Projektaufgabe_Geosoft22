@@ -73,8 +73,8 @@ class MapInterface{
             <input type="hidden" id="lat" name="lat" value="${layer._latlng.lat}">
             <input type="hidden" id="lng" name="lng" value="${layer._latlng.lng}">
             <input id="hoehe" name="hoehe" value="" placeholder="hoehe">
-            <input id="beschreibung" name="beschreibung" value="" placeholder="beschreibung">
             <input id="url" name="url" value="" placeholder="url">
+            <input id="beschreibung" name="beschreibung" value="" placeholder="beschreibung">
             <input type="submit" value="Submit">
           </form>
         `;
