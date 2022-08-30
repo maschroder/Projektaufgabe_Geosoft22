@@ -86,12 +86,12 @@ class MapInterface {
 
   async pruefen() {
     a = document.createGebirge
-    if (a.url.value.endsWith("org/wiki/%")) { 
+    if (a.url.value.startsWith("de.wikipedia.org/wiki/")) { 
       let myObject = await fetch(a.url.value);
       let myText = await myObject.text();
       console.log(myText);
      }
-     
+     // if true: snippet aus Wikipedia Artikel anzeigen
      
   }
 
