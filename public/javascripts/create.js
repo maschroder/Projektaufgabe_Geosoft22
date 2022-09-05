@@ -83,7 +83,7 @@ class MapInterface {
 
     });
   }
-
+// Funktion, die überprüfen soll, ob die URL eine Wikipedia-URL ist
   async pruefen() {
     a = document.createGebirge
     if (a.url.value.startsWith("de.wikipedia.org/wiki/")) { 
@@ -124,9 +124,7 @@ xhr.send();
 
   }
 
- 
-
-  /**
+/**
   * @desc clear Mountains
   * @desc removes all markers from the map when called
   */
