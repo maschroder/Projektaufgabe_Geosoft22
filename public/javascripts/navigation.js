@@ -10,16 +10,26 @@ function successLocation(position){
 	setupMap([position.coords.longitude, position.coords.latitude])
 }
 
+// Bei Fehler Location zum Geo-Gebäude setzen
 function errorLocation(position){
-
+	setupMap([7.5942655, 51.9688551])
 }
 
 function setupMap(center){
-	var map = new mapboxgl.Map({
+	const map = new mapboxgl.Map({
 		container: 'map',
 		style: 'mapbox://styles/mapbox/streets-v11',
-		center: center
+		center: center,
+		zoom: 3
 	  })
+
+	const nav = new mapboxgl.NavigationControl();
+	map.addControl(nav);
+
+    var directions = new MapboxDirections({
+		accessToken: mapboxgl.accessToken
+	});
+	map.addControl(directions, 'top-left')
 }
 
 
