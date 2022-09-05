@@ -173,7 +173,7 @@ class MapInterface{
 
 mainMapInterface = new MapInterface(
   {
-    mapid: "mapleaflet",
+    mapid: "map",
     view: [54.508, 7.5],
     zoom: 3.5,
     baseMap: {

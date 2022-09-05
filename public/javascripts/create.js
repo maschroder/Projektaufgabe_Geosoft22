@@ -56,7 +56,7 @@ class MapInterface {
   * @desc function adds leaflet Draw Events.
   * In this case only the reactangle is considered.
   */
-  addDrawEvents() {
+ addDrawEvents() {
     let drawnItems = this.drawnItems;
     let mapInterface = this;
     this.map.on(L.Draw.Event.CREATED, function (e) {
@@ -82,9 +82,9 @@ class MapInterface {
       }
 
     });
-  }
+  }}
 // Funktion, die überprüfen soll, ob die URL eine Wikipedia-URL ist
-  async pruefen() {
+  async function pruefen() {
     a = document.createGebirge
     if (a.url.value.startsWith("de.wikipedia.org/wiki/")) { 
       let myObject = await fetch(a.url.value);
@@ -96,7 +96,7 @@ class MapInterface {
   }
 
 // Code von einer Website über Wikipedia API:
-  httpRequest(){
+function httpRequest(){
    //Create a new object to interact with the server
 var xhr = new XMLHttpRequest();
 var url = a.url.value.startsWith("de.wikipedia.org/wiki/");
@@ -127,7 +127,7 @@ xhr.send();
   * @desc clear Mountains
   * @desc removes all markers from the map when called
   */
-  clearMountains() {
+ function clearMountains() {
     //empty the indices and featureGroups
     this.gebirgeIndex = [];
     this.gebirgeGroup.clearLayers();
@@ -137,7 +137,7 @@ xhr.send();
 
  mainMapInterface = new MapInterface(
   {
-    mapid: "mapleaflet",
+    mapid: "map",
     view: [54.508, 7.5],
     zoom: 3.5,
     baseMap: {
@@ -147,4 +147,3 @@ xhr.send();
     }
   }
 );
-}
