@@ -171,60 +171,9 @@ class MapInterface{
   }
 
 
-
-
-/**
- * @desc Shows the position of the user in the textarea
- * @param {*} position Json object of the user
- */
-showPosition(position) {
-  var x = document.getElementById("userPosition");
-  //"Skeleton" of a valid geoJSON Feature collection
-  let outJSON = { "type": "FeatureCollection", "features": [] };
-  //skelly of a (point)feature
-  let pointFeature = {"type": "Feature","properties": {},"geometry": {"type": "Point","coordinates": []}};
-  pointFeature.geometry.coordinates = [position.coords.longitude, position.coords.latitude];
-  //add the coordinates to the geoJson
-  outJSON.features.push(pointFeature);
-  x.innerHTML = JSON.stringify(outJSON);
-}
-
-// Funktionen, um Browserstandort zu ermitteln und einen Marker auf der Map hinzuzufügen
-
-getLocation() {
-  x = document.getElementById("location");
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-
-}
-
-showPosition(position) {
-  var lat = position.coords.latitude;
-  var lng = position.coords.longitude;
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
-
-  myLocation = [lat,lng]
-  // adding a green icon 
-  var greenIcon = new L.Icon({
-    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-  });
-console.log(myLocation)
- new L.marker(myLocation, {icon: greenIcon}).addTo(map).bindPopup("Ich bin hier");
-}
-
-
 mainMapInterface = new MapInterface(
   {
-    mapid: "map",
+    mapid: "mapleaflet",
     view: [54.508, 7.5],
     zoom: 3.5,
     baseMap: {
