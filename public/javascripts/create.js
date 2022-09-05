@@ -135,16 +135,15 @@ xhr.send();
     this.gebirgeIndex = [];
     this.gebirgeGroup.clearLayers();
   }
-}
+
 
 
 
 /**
- * @function showPosition
  * @desc Shows the position of the user in the textarea
  * @param {*} position Json object of the user
  */
- function showPosition(position) {
+ showPosition(position) {
   var x = document.getElementById("userPosition");
   //"Skeleton" of a valid geoJSON Feature collection
   let outJSON = { "type": "FeatureCollection", "features": [] };
@@ -156,11 +155,10 @@ xhr.send();
   x.innerHTML = JSON.stringify(outJSON);
 }
 
-// Funktionen für Abgabe 3 und 4. Die Funktionen hierüber in der script.js stammen aus der Musterlösung der 2. Abgabe
 
+// Funktionen, um Browserstandort zu ermitteln und einen Marker auf der Map hinzuzufügen
 
-
-function getLocation() {
+getLocation() {
   x = document.getElementById("location");
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -170,7 +168,7 @@ function getLocation() {
 
 }
 
-function showPosition(position) {
+showPosition(position) {
   var lat = position.coords.latitude;
   var lng = position.coords.longitude;
   x.innerHTML = "Latitude: " + position.coords.latitude + 
@@ -191,9 +189,7 @@ console.log(myLocation)
 }
 
 
-
-
-const mainMapInterface = new MapInterface(
+ mainMapInterface = new MapInterface(
   {
     mapid: "map",
     view: [54.508, 7.5],
@@ -205,3 +201,4 @@ const mainMapInterface = new MapInterface(
     }
   }
 );
+}
