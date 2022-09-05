@@ -8,6 +8,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var createRouter = require('./routes/create');
 var editRouter = require('./routes/edit');
+var navigationRouter = require('./routes/navigation');
 var gebirgeRouter = require('./routes/gebirge');
 var impressumRouter = require('./routes/impressum');
 
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/create', createRouter);
 app.use('/edit', editRouter);
+app.use('/navigation', navigationRouter);
 app.use('/impressum', impressumRouter);
 
 //dieser router existiert nicht um eine Seite zu servieren, sondern die Gebirge-daten.
