@@ -9,7 +9,7 @@ class MapInterface {
       console.log("couldn't initialise map-interface. invalid parameters");
       return false;
     }
-
+    const mapboxToken = "pk.eyJ1IjoibWFzY2hyb2RlciIsImEiOiJjbDdvcXF3MnQwMDFnM3ZwY3FpazMzbXh2In0.tUxJlLvBXq19DPAaYyDqHA";
     let mapid = params.mapid;
     let view = params.view || [0, 0];
     let zoom = params.zoom || 6;
@@ -54,7 +54,6 @@ class MapInterface {
 
   /**
   * @desc function adds leaflet Draw Events.
-  * In this case only the reactangle is considered.
   */
  addDrawEvents() {
     let drawnItems = this.drawnItems;
@@ -82,6 +81,7 @@ class MapInterface {
       }
 
     });
+
   }}
 // Funktion, die überprüfen soll, ob die URL eine Wikipedia-URL ist
   async function pruefen() {
@@ -134,16 +134,15 @@ xhr.send();
   }
 
 
-
- mainMapInterface = new MapInterface(
-  {
-    mapid: "map",
-    view: [54.508, 7.5],
-    zoom: 3.5,
-    baseMap: {
-      tileLayer: 'https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',
-      maxZoom: 18,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  mainMapInterface = new MapInterface(
+    {
+      mapid: "map",
+      view: [54.508, 7.5],
+      zoom: 3.5,
+      baseMap: {
+        tileLayer: 'https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }
     }
-  }
-);
+  );
