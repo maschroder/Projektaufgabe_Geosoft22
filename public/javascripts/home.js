@@ -1,4 +1,4 @@
-// Button, um Name und Höhe des höchsten Bergs in Europa anzuzeigen
+// Button, um Name und Höhe des höchsten und zweithöchsten Bergs in Europa anzuzeigen
 var x = document.getElementById("demo");
 var bigOnes = ["Der Mont Blanc mit 4810 Metern!", "Dufourspitze mit 4634 Metern!"];
 function showBiggest(){
