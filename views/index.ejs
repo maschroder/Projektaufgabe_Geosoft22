@@ -10,12 +10,9 @@
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
 
-    <link rel="stylesheet" href="/leaflet/leaflet.css" />
-    <script src="/leaflet/leaflet.js"></script>
-
     <script defer src="/javascripts/home.js"></script>
   </head>
-  <body onload="main()">
+  <body>
     <%
     /*
     das hier ist EJS, es ist eine Template engine (wie auch pug) welche erlaubt, mit hilfe von JS-
@@ -34,9 +31,24 @@
     <div class="container">
       <h1><%= title %></h1>
     </div>
-
-  
-
-
+    <br>
+    <div class="a" align="center"></div>
+    <h3>Kartenbasierte, interaktive Webanwendung zum Hinzufügen und zur Suche von Gebirgen in Europa</h3>
+    <br>
+    <br>
+    <p>Auf dieser Website ist es möglich, Gebirge auf der Europakarte mit näheren Informationen einzutragen, in einer Datenbank zu speichern und wieder zu löschen. </p>
+    <p>Es können außerdem Routen zwischen zwei Punkten berechnet und auf der Karte dargestellt werden.</p>
+    <br>
+    <h5>Interessante Fakten zu Gebirgen in Europa:</h5>
+    <br>
+    <div id="biggestMountain">
+      <h6>Welcher ist der höchste Berg in Europa?</h6>
+      <button type="button" onclick="showBiggest()">Show Me!</button>
+     </div>
+<br>
+     <div id="secondBiggestMountain">
+      <h6>Welcher ist der zweithöchste Berg in Europa?</h6>
+      <button type="button" onclick="showSecondBiggest()">Show Me!</button>
+     </div>
   </body>
 </html>

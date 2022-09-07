@@ -95,6 +95,24 @@ class MapInterface {
      
   }
 
+// Code aus Abgabe 3 über Haltestellen API:
+/**
+ * // Fragt Haltestellen-Informationen der API an und gibt diese mit Button aus
+let stopdiv = document.getElementById("BushaltestellenButton")
+function showStops() {
+   let xhttp = new XMLHttpRequest()
+   xhttp.open("GET", "https://rest.busradar.conterra.de/prod/haltestellen", true)
+   xhttp.send()
+   xhttp.onreadystatechange = function() {
+     if (this.readyState == 4 && this.status == 200){
+       let res = JSON.parse(this.responseText)
+       console.log(res)
+       drawTable(res)
+       }
+ */
+
+
+
 // Code von einer Website über Wikipedia API:
 function httpRequest(){
    //Create a new object to interact with the server
