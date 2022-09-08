@@ -14,7 +14,7 @@ class MapInterface {
     let view = params.view || [0, 0];
     let zoom = params.zoom || 6;
     let baseMap = params.baseMap;
-    let mapboxMap = params.mapboxMap;
+    
 
     this.map = L.map(mapid).setView(view, zoom);
 
@@ -51,6 +51,7 @@ class MapInterface {
 
     this.addDrawControls();
     this.addDrawEvents();
+
   }
 
   /**
