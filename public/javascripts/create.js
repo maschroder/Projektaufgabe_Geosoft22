@@ -14,6 +14,7 @@ class MapInterface {
     let view = params.view || [0, 0];
     let zoom = params.zoom || 6;
     let baseMap = params.baseMap;
+    let mapboxMap = params.mapboxMap;
 
     this.map = L.map(mapid).setView(view, zoom);
 
@@ -25,7 +26,26 @@ class MapInterface {
     }
     );
     this.baseMapLayer.addTo(this.map);
-
+ /** 
+  * Code um Mapbox layer und Mapbox Directions zu der Karte hinzuzufügen.
+  * Funktioniert aber nicht und löscht die Leaflet Funktionen aus der Karte raus?!?!?
+  * 
+    this.mapboxLayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+      maxZoom: 18,
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: mapboxToken
+  }).addTo(map);
+      
+  
+  this.map.addControl(
+    new MapboxDirections({
+    accessToken: mapboxToken
+    }),
+    'top-right'
+    );
+*/
     this.drawnItem = false;
     this.drawnItems = new L.FeatureGroup().addTo(this.map);
 
@@ -82,7 +102,8 @@ class MapInterface {
 
     });
 
-  }}
+  }
+}
 // Funktion, die überprüfen soll, ob die URL eine Wikipedia-URL ist
   async function pruefen() {
     a = document.createGebirge

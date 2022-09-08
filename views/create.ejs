@@ -15,11 +15,18 @@
     <link rel="stylesheet" href="/leaflet-draw/leaflet.draw.css" />
     <script src="/leaflet-draw/leaflet.draw.js"></script>
 
-    <script defer src="/javascripts/createTest.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+
+    <script defer src="/javascripts/create.js"></script>
     
   </head>
   <body>
     <%- include('navbar') -%>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
+
     <div>
       <h1><%= title %></h1>
       <div id="map"></div>
