@@ -101,18 +101,34 @@ class MapInterface {
         layer.bindPopup(popupString).openPopup();
       }
       showWikipedia();
+      pruefen();
 
     });
-
-  }
+    }
 }
+
+function showWikipedia() {
+  let xhttp = new XMLHttpRequest()
+  xhttp.open("GET", "http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=Mont Blanc&format=json" + "&origin=*", true)
+  xhttp.send()
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200){
+      let res = JSON.parse(this.responseText)
+      //console.log(res)
+      let snippet = res.query.search[0].snippet
+      snippet = escapeHtml(snippet);
+      a.beschreibung.value = snippet;
+      console.log(escapeHtml(snippet))
+      }
+     }}
+
+
 // Funktion, die überprüfen soll, ob die URL eine Wikipedia-URL ist
   async function pruefen() {
     a = document.createGebirge
-    if (a.url.value.startsWith("de.wikipedia.org/wiki/")) { 
-      let myObject = await fetch(a.url.value);
-      let myText = await myObject.text();
-      console.log(myText);
+    if (a.url.value = "https://en.wikipedia.org/wiki/Mont_Blanc") { 
+      a.beschreibung.value = snippet;
+      
      }
      // if true: snippet aus Wikipedia Artikel anzeigen
      
@@ -120,20 +136,12 @@ class MapInterface {
   var url = "https://en.wikipedia.org/w/api.php";
   url = url + "?origin=*";
 
-// let stopdiv = document.getElementById("BushaltestellenButton")
-function showWikipedia() {
-   let xhttp = new XMLHttpRequest()
-   xhttp.open("GET", "http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=Mont Blanc&format=json" + "&origin=*", true)
-   xhttp.send()
-   xhttp.onreadystatechange = function() {
-     if (this.readyState == 4 && this.status == 200){
-       let res = JSON.parse(this.responseText)
-       //console.log(res)
-       let snippet = res.query.search[0].snippet
-       console.log(snippet)
+  function escapeHtml(unsafe) {
+    return unsafe.replaceAll('&amp;', '&').replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&quot;', '"');
+}
 
-       }
-      }}
+
+
 
 
 
