@@ -10,10 +10,17 @@
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
 
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+
     <script defer src="/javascripts/edit.js"></script>
   </head>
   <body onload="main()">
     <%- include('navbar') -%>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
+
     <div class="container">
 
       <h1><%= title %></h1>
@@ -44,6 +51,6 @@
 
     </div>
 
-
+    <div id="map"></div>
   </body>
 </html>
