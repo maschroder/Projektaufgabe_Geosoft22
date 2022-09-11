@@ -122,7 +122,7 @@ function showWikipedia() {
       }
      }}
 
-
+var snippet;
 // Funktion, die überprüfen soll, ob die URL eine Wikipedia-URL ist
   async function pruefen() {
     a = document.createGebirge
@@ -130,11 +130,11 @@ function showWikipedia() {
       a.beschreibung.value = snippet;
       
      }
-     // if true: snippet aus Wikipedia Artikel anzeigen
+     
      
   }
-  var url = "https://en.wikipedia.org/w/api.php";
-  url = url + "?origin=*";
+  //var url = "https://en.wikipedia.org/w/api.php";
+  //url = url + "?origin=*";
 
   function escapeHtml(unsafe) {
     return unsafe.replaceAll('&amp;', '&').replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&quot;', '"');
