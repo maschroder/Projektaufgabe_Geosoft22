@@ -28,7 +28,7 @@ class MapInterface {
     this.baseMapLayer.addTo(this.map);
  /** 
   * Code um Mapbox layer und Mapbox Directions zu der Karte hinzuzufügen.
-  * Funktioniert aber nicht und löscht die Leaflet Funktionen aus der Karte raus?!?!?
+  * Funktioniert aber nicht und löscht die Leaflet Funktionen aus der Karte raus?!?!? (siehe Kommentar in der createTest.js Datei)
   * 
     this.mapboxLayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
       maxZoom: 18,
@@ -100,6 +100,7 @@ class MapInterface {
         `;
         layer.bindPopup(popupString).openPopup();
       }
+      showWikipedia();
 
     });
 
@@ -116,22 +117,24 @@ class MapInterface {
      // if true: snippet aus Wikipedia Artikel anzeigen
      
   }
+  var url = "https://en.wikipedia.org/w/api.php";
+  url = url + "?origin=*";
 
-// Code aus Abgabe 3 über Haltestellen API:
-/**
- * // Fragt Haltestellen-Informationen der API an und gibt diese mit Button aus
-let stopdiv = document.getElementById("BushaltestellenButton")
-function showStops() {
+// let stopdiv = document.getElementById("BushaltestellenButton")
+function showWikipedia() {
    let xhttp = new XMLHttpRequest()
-   xhttp.open("GET", "https://rest.busradar.conterra.de/prod/haltestellen", true)
+   xhttp.open("GET", "http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=Mont Blanc&format=json" + "&origin=*", true)
    xhttp.send()
    xhttp.onreadystatechange = function() {
      if (this.readyState == 4 && this.status == 200){
        let res = JSON.parse(this.responseText)
-       console.log(res)
-       drawTable(res)
+       //console.log(res)
+       let snippet = res.query.search[0].snippet
+       console.log(snippet)
+
        }
- */
+      }}
+
 
 
 
