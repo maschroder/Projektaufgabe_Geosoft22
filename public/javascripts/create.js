@@ -106,7 +106,7 @@ class MapInterface {
     });
     }
 }
-
+var snippet;
 function showWikipedia() {
   let xhttp = new XMLHttpRequest()
   xhttp.open("GET", "http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=Mont Blanc&format=json" + "&origin=*", true)
@@ -122,7 +122,7 @@ function showWikipedia() {
       }
      }}
 
-var snippet;
+
 // Funktion, die überprüfen soll, ob die URL eine Wikipedia-URL ist
   async function pruefen() {
     a = document.createGebirge
