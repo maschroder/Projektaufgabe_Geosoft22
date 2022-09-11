@@ -1,3 +1,10 @@
+/** Javascript, um die Mapbox Karte in der create Route einzufügen. Leider erscheint die Leaflet Draw Funktion
+ * nicht und wir haben uns dazu entschieden, diese Datei als Alternative anzubieten, dennoch erschien es uns wichtiger,
+ * in der create Route die Funktion anzubieten, neue Gebirge hinzuzufügen. Um die Mapbox Karte anzuzeigen, müsste in
+ * der create.ejs createTest.js (Kommentar Zeile 22) anstatt create.js eingebunden werden.
+ */
+
+
 const mapboxToken = "pk.eyJ1IjoibWFzY2hyb2RlciIsImEiOiJjbDdvcXF3MnQwMDFnM3ZwY3FpazMzbXh2In0.tUxJlLvBXq19DPAaYyDqHA";
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiZHNlbiIsImEiOiJjbDZtOTZ0bnIwNWh0M2VxcWtqZGlna3h4In0.UoeEOBdUWQvYtDYZuapNgg';
