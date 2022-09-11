@@ -1,10 +1,26 @@
 const mapboxToken = "pk.eyJ1IjoibWFzY2hyb2RlciIsImEiOiJjbDdvcXF3MnQwMDFnM3ZwY3FpazMzbXh2In0.tUxJlLvBXq19DPAaYyDqHA";
 
-const map = L.map('map').setView([54.508, 7.5], 3.5);
+mapboxgl.accessToken = 'pk.eyJ1IjoiZHNlbiIsImEiOiJjbDZtOTZ0bnIwNWh0M2VxcWtqZGlna3h4In0.UoeEOBdUWQvYtDYZuapNgg';
 
+const map = new mapboxgl.Map({
+  container: 'map',
+  // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+  style: 'mapbox://styles/mapbox/streets-v11',
+  // lat/lon musste vertauscht werden
+  center: [7.5, 54.508 ],
+  zoom: 3.5
+  });
+   
+  map.addControl(
+  new MapboxDirections({
+  accessToken: mapboxgl.accessToken
+  }),
+  'top-right'
+  );
 
+ 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    maxZoom: 18,
+    maxZoom: 3.5,
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
@@ -88,3 +104,5 @@ var drawControl = new L.Control.Draw({
   map.on('draw:created', function(e) {
       featureGroup.addLayer(e.layer);
   });
+
+  
