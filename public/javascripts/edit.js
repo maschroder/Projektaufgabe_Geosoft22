@@ -17,6 +17,7 @@ async function getMountain(){
   });;
   return response;
 }
+setMarker(data)
 
 /**
 * @desc fill table
@@ -113,6 +114,9 @@ const marker = L.marker([7.5, 54.508]).addTo(map);
     saved.forEach(?????)
   }
 */
+
+var busItems = new L.FeatureGroup();
+map.addLayer(busItems);
 
 function setMarker(my_results) {
   for (let i = 0; i < my_results.length; i++) {
