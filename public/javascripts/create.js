@@ -99,19 +99,19 @@ function showWikipedia() {
     if (this.readyState == 4 && this.status == 200){
       let res = JSON.parse(this.responseText)
       //console.log(res)
-      let snippet = res.query.search[0].snippet
+      snippet = res.query.search[0].snippet
       snippet = escapeHtml(snippet);
-      if (a.url.value.startsWith("https://en.wikipedia.org/wiki/")) { 
+    
       a.beschreibung.value = snippet;
       console.log(escapeHtml(snippet))
-      }}
+      }
      }}
 
 
 // Funktion, die überprüfen soll, ob die URL eine Wikipedia-URL ist
   async function pruefen() {
     a = document.createGebirge
-    if (a.url.value = "https://en.wikipedia.org/wiki/Mont_Blanc") { 
+    if (a.url.value.startsWith("https://en.wikipedia.org/wiki/")) { 
       a.beschreibung.value = snippet;
       
      }
