@@ -21,4 +21,4 @@ function showWeather() {
        console.log(res)
      }}} 
 
- // Anfrage gibt 404 (Not Found) Error    
+ // Anfrage gibt 404 (Not Found) Error in der Console  
