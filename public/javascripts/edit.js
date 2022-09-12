@@ -19,7 +19,7 @@ async function getMountain(){
   });;
   return response;
 }
-setMarker(data)
+//setMarker(data)
 
 /**
 * @desc fill table
@@ -103,7 +103,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: mapboxToken
 }).addTo(map);
 
-const marker = L.marker([7.5, 54.508]).addTo(map);
+
 
 // Button hinzufügen, der die Funktion aufruft, aus den Koordinaten der gespeicherten Gebirge in der Tabelle
 // Marker zu erstellen:
@@ -115,7 +115,7 @@ const marker = L.marker([7.5, 54.508]).addTo(map);
   function showSaved(){
     saved.forEach(?????)
   }
-*/
+
 
 var busItems = new L.FeatureGroup();
 map.addLayer(busItems);
@@ -130,5 +130,5 @@ for(gebirge of data.features){
 
   busItems.addLayer(marker)
 }}
-
+*/
   
