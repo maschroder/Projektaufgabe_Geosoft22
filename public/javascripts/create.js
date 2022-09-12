@@ -124,40 +124,6 @@ function showWikipedia() {
     return unsafe.replaceAll('&amp;', '&').replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&quot;', '"');
 }
 
-
-
-
-
-
-
-// Code von einer Website über Wikipedia API:
-function httpRequest(){
-   //Create a new object to interact with the server
-var xhr = new XMLHttpRequest();
-var url = a.url.value.startsWith("de.wikipedia.org/wiki/");
-// Provide 3 arguments (GET/POST, The URL, Async True/False)
-xhr.open('GET', url, true);
-// Once request has loaded...
-xhr.responseType = 'json';
-xhr.onload = function() {
-    // Parse the request into JSON
-    var data = xhr.response;
-    // Log the data object
-    console.log(data);
-    // Log the page objects
-    console.log(data.query.pages)
-    // Loop through the data object
-    // Pulling out the titles of each page
-    for (var i in data.query.pages) {
-        console.log(data.query.pages[i].title);
-    }
-}
-// Send request to the server asynchronously
-xhr.send();
-
-
-
-  }
   /**
   * @desc clear Mountains
   * @desc removes all markers from the map when called
@@ -168,7 +134,7 @@ xhr.send();
     this.gebirgeGroup.clearLayers();
   }
 
-  
+
 
   mainMapInterface = new MapInterface(
     {
