@@ -101,13 +101,8 @@ const map = new mapboxgl.Map({
 // Button hinzufügen, der die Funktion aufruft, aus den Koordinaten der gespeicherten Gebirge in der Tabelle
 // Marker zu erstellen:
 
-   
 
-
-var savedMountains = new L.FeatureGroup();
-map.addLayer(savedMountains);
-
-const saved = [];
+var saved = [];
 function setMarker(data){
 for(gebirge of data.features){
   let coords = gebirge.geometry.coordinates
@@ -118,7 +113,6 @@ for(gebirge of data.features){
 .setLngLat([coords[0], coords[1]])
 .addTo(map);
 
-  savedMountains.addLayer(marker)
 }}
 
 
