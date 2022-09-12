@@ -94,7 +94,7 @@ class MapInterface {
             <input type="hidden" id="lng" name="lng" value="${layer._latlng.lng}">
             <input id="hoehe" name="hoehe" value="" placeholder="hoehe">
             <input id="url" name="url" value="" placeholder="url">
-            <input type="hidden" id="beschreibung" name="beschreibung" value="" placeholder="beschreibung">
+            <input id="beschreibung" name="beschreibung" value="" placeholder="beschreibung">
             <input type="submit" value="Submit">
           </form>
         `;
@@ -117,13 +117,23 @@ function showWikipedia() {
       //console.log(res)
       let snippet = res.query.search[0].snippet
       snippet = escapeHtml(snippet);
-      if (a.url.value.startsWith("https://en.wikipedia.org/wiki/")) { 
+      if (a.url.value = "https://en.wikipedia.org/wiki/Mont_Blanc") { 
       a.beschreibung.value = snippet;
       console.log(escapeHtml(snippet))
       }}
      }}
 
 
+// Funktion, die überprüfen soll, ob die URL eine Wikipedia-URL ist
+  async function pruefen() {
+    a = document.createGebirge
+    if (a.url.value = "https://en.wikipedia.org/wiki/Mont_Blanc") { 
+      a.beschreibung.value = snippet;
+      
+     }
+     
+     
+  }
   
 
   function escapeHtml(unsafe) {
