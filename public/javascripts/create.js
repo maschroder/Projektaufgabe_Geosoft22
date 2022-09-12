@@ -117,24 +117,14 @@ function showWikipedia() {
       //console.log(res)
       let snippet = res.query.search[0].snippet
       snippet = escapeHtml(snippet);
+      if (a.url.value.startsWith("https://en.wikipedia.org/wiki/")) { 
       a.beschreibung.value = snippet;
       console.log(escapeHtml(snippet))
-      }
+      }}
      }}
 
 
-// Funktion, die überprüfen soll, ob die URL eine Wikipedia-URL ist
-  async function pruefen() {
-    a = document.createGebirge
-    if (a.url.value = "https://en.wikipedia.org/wiki/Mont_Blanc") { 
-      a.beschreibung.value = snippet;
-      
-     }
-     
-     
-  }
-  //var url = "https://en.wikipedia.org/w/api.php";
-  //url = url + "?origin=*";
+  
 
   function escapeHtml(unsafe) {
     return unsafe.replaceAll('&amp;', '&').replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&quot;', '"');
