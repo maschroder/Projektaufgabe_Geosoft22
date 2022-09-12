@@ -80,13 +80,15 @@ class MapInterface {
           </form>
         `;
         layer.bindPopup(popupString).openPopup();
+      showWikipedia()
       }
       
-      showWikipedia();
+      
 
     });
     }
 }
+
 
 
 
@@ -98,14 +100,14 @@ function showWikipedia() {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200){
       let res = JSON.parse(this.responseText)
-      //console.log(res)
+      console.log(res)
       snippet = res.query.search[0].snippet
       snippet = escapeHtml(snippet);
-    
       a.beschreibung.value = snippet;
       console.log(escapeHtml(snippet))
       }
-     }}
+     }
+}
 
 
 // Funktion, die überprüfen soll, ob die URL eine Wikipedia-URL ist
