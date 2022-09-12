@@ -19,7 +19,6 @@ async function getMountain(){
   });;
   return response;
 }
-setMarker(data)
 
 /**
 * @desc fill table
