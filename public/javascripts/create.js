@@ -75,7 +75,7 @@ class MapInterface {
             <input type="hidden" id="lng" name="lng" value="${layer._latlng.lng}">
             <input id="hoehe" name="hoehe" value="" placeholder="hoehe">
             <input id="url" name="url" value="" placeholder="url">
-            <input id="beschreibung" name="beschreibung" value="" placeholder="beschreibung">
+            <input type="hidden" id="beschreibung" name="beschreibung" value="" placeholder="beschreibung">
             <input type="submit" value="Submit">
           </form>
         `;
@@ -93,7 +93,7 @@ class MapInterface {
 var snippet;
 function showWikipedia() {
   let xhttp = new XMLHttpRequest()
-  xhttp.open("GET", "http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=Mont Blanc&format=json" + "&origin=*", true)
+  xhttp.open("GET", "http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch={gesuchterBerg}&format=json" + "&origin=*", true)
   xhttp.send()
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200){
@@ -101,7 +101,7 @@ function showWikipedia() {
       //console.log(res)
       let snippet = res.query.search[0].snippet
       snippet = escapeHtml(snippet);
-      if (a.url.value = "https://en.wikipedia.org/wiki/Mont_Blanc") { 
+      if (a.url.value.startsWith("https://en.wikipedia.org/wiki/")) { 
       a.beschreibung.value = snippet;
       console.log(escapeHtml(snippet))
       }}
