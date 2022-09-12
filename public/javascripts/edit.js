@@ -107,7 +107,7 @@ const map = new mapboxgl.Map({
 var savedMountains = new L.FeatureGroup();
 map.addLayer(savedMountains);
 
-const saved = [];
+var saved = [];
 function setMarker(data){
 for(gebirge of data.features){
   let coords = gebirge.geometry.coordinates
