@@ -74,9 +74,8 @@ async function submitData(){
 
 // Mapbox Karte für gespeicherte Gebirge erstellen:
 
-const mapboxToken = "pk.eyJ1IjoibWFzY2hyb2RlciIsImEiOiJjbDdvcXF3MnQwMDFnM3ZwY3FpazMzbXh2In0.tUxJlLvBXq19DPAaYyDqHA";
-
 mapboxgl.accessToken = 'pk.eyJ1IjoiZHNlbiIsImEiOiJjbDZtOTZ0bnIwNWh0M2VxcWtqZGlna3h4In0.UoeEOBdUWQvYtDYZuapNgg';
+
 
 const map = new mapboxgl.Map({
   container: 'map',
@@ -94,14 +93,6 @@ const map = new mapboxgl.Map({
   'top-right'
   );
 
- 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    maxZoom: 3.5,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: mapboxToken
-}).addTo(map);
 
 
 
