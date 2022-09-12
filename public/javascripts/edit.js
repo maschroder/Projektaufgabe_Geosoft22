@@ -117,8 +117,8 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   }
 
 
-var busItems = new L.FeatureGroup();
-map.addLayer(busItems);
+var savedMountains = new L.FeatureGroup();
+map.addLayer(savedMountains);
 
 
 function setMarker(data){
@@ -128,7 +128,7 @@ for(gebirge of data.features){
   let marker = L.marker([coords[1], coords[0]])
   .bindPopup(gebirge.properties.name)
 
-  busItems.addLayer(marker)
+  savedMountains.addLayer(marker)
 }}
 */
   
