@@ -115,8 +115,8 @@ for(gebirge of data.features){
   console.log(coords)
   saved.push(coords);
   console.log(saved)
-  const marker = new mapboxgl.Marker()
-.setLngLat([7.5, 54.508])
+  const marker1 = new mapboxgl.Marker()
+.setLngLat([coords[0], coords[1]])
 .addTo(map);
 
   savedMountains.addLayer(marker)
