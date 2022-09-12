@@ -113,4 +113,16 @@ const marker = L.marker([7.5, 54.508]).addTo(map);
     saved.forEach(?????)
   }
 */
+
+function setMarker(my_results) {
+  for (let i = 0; i < my_results.length; i++) {
+      let coords = my_results[i].coordinates
+
+      let marker = L.marker([coords[1], coords[0]])
+          .bindPopup(my_results[i].name + '<br>' + "Entfernung: " + my_results[i].distance + "m")
+
+      busItems.addLayer(marker)
+  }
+}
+
   
