@@ -94,8 +94,6 @@ const map = new mapboxgl.Map({
  
   
 
-
-
 // Button hinzufügen, der die Funktion aufruft, aus den Koordinaten der gespeicherten Gebirge in der Tabelle
 // Marker zu erstellen:
 
