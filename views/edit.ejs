@@ -10,8 +10,12 @@
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
     <script defer src="/javascripts/edit.js"></script>
   </head>
@@ -52,5 +56,11 @@
     </div>
 
     <div id="map"></div>
+
+    <div id="GebirgeButton">
+      <h2>Die in der Tabelle gespeicherten Gebirge auf der Karte anzeigen</h2>
+      <button type="button" onclick="showSaved()">Zeige Gebirge!</button>
+     </div>
+
   </body>
 </html>

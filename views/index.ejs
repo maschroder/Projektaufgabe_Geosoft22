@@ -36,8 +36,9 @@
     <h3>Kartenbasierte, interaktive Webanwendung zum Hinzufügen und zur Suche von Gebirgen in Europa</h3>
     <br>
     <br>
-    <p>Auf dieser Website ist es möglich, Gebirge auf der Europakarte mit näheren Informationen einzutragen, in einer Datenbank zu speichern und wieder zu löschen. </p>
-    <p>Es können außerdem Routen zwischen zwei Punkten berechnet und auf der Karte dargestellt werden.</p>
+    <p>Auf dieser Website ist es möglich, Gebirge auf der Europakarte mit näheren Informationen einzutragen, in einer Datenbank zu speichern und wieder zu löschen.
+      Diese werden in einer Tabelle gespeichert. </p>
+    <p>Es können außerdem Routen zwischen zwei Punkten berechnet und auf der Karte dargestellt werden sowie die Wetterverhältnisse angezeigt werden.</p>
     <br>
     <div style="text-align: center;">
     <img src="https://www.unibe.ch/unibe/portal/content/e796/e803/e59463/e805/e911258/e913259/e1019662/20201126_Medienmitteilung_UniBE_Alpen_Abtragung_1_Eiger_Moench_Jungfrau_web_ger.jpg" width="500" height="200"> 
@@ -55,6 +56,11 @@
      <div id="secondBiggestMountain">
       <h6>Welcher ist der zweithöchste Berg in Europa?</h6>
       <button type="button" onclick="showSecondBiggest()">Show Me!</button>
+     </div>
+<br>
+     <div id="WetterButton" style="text-align: center;">
+      <h2>Wetterinformationen über die Gebirge</h2>
+      <button type="button" onclick="showWeather()">Wetterverhältnisse anzeigen</button>
      </div>
   </body>
 </html>
