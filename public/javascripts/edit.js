@@ -1,12 +1,14 @@
 async function main(){
   const mountains = await getMountain();
   fillTable(mountains);
+  setMarker(mountains)
 }
 
 /**
 * @desc get Mountains
 * @desc fetches all Mountains from server
 */
+var data;
 async function getMountain(){
   const response = await fetch('/gebirge').then(
     response => response.json()
@@ -118,15 +120,15 @@ const marker = L.marker([7.5, 54.508]).addTo(map);
 var busItems = new L.FeatureGroup();
 map.addLayer(busItems);
 
-function setMarker(my_results) {
-  for (let i = 0; i < my_results.length; i++) {
-      let coords = my_results[i].coordinates
 
-      let marker = L.marker([coords[1], coords[0]])
-          .bindPopup(my_results[i].name + '<br>' + "Entfernung: " + my_results[i].distance + "m")
+function setMarker(data){
+for(gebirge of data.features){
+  let coords = gebirge.geometry.coordinates
+  console.log(coords)
+  let marker = L.marker([coords[1], coords[0]])
+  .bindPopup(gebirge.properties.name)
 
-      busItems.addLayer(marker)
-  }
-}
+  busItems.addLayer(marker)
+}}
 
   
