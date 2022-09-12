@@ -19,7 +19,7 @@ async function getMountain(){
   });;
   return response;
 }
-//setMarker(data)
+setMarker(data)
 
 /**
 * @desc fill table
@@ -102,27 +102,24 @@ const map = new mapboxgl.Map({
 // Button hinzufügen, der die Funktion aufruft, aus den Koordinaten der gespeicherten Gebirge in der Tabelle
 // Marker zu erstellen:
 
-  /** 
-  const saved = [];
-  saved.push(gebirge.geometry.coordinates);
-  let saveddiv = document.getElementById("GebirgeButton")  
-  function showSaved(){
-    saved.forEach(?????)
-  }
+   
 
 
 var savedMountains = new L.FeatureGroup();
 map.addLayer(savedMountains);
 
-
+const saved = [];
 function setMarker(data){
 for(gebirge of data.features){
   let coords = gebirge.geometry.coordinates
   console.log(coords)
-  let marker = L.marker([coords[1], coords[0]])
-  .bindPopup(gebirge.properties.name)
+  saved.push(coords);
+  console.log(saved)
+  const marker = new mapboxgl.Marker()
+.setLngLat([7.5, 54.508])
+.addTo(map);
 
   savedMountains.addLayer(marker)
 }}
-*/
+
 
