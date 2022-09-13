@@ -9,7 +9,7 @@ class MapInterface {
       console.log("couldn't initialise map-interface. invalid parameters");
       return false;
     }
-    const mapboxToken = "pk.eyJ1IjoibWFzY2hyb2RlciIsImEiOiJjbDdvcXF3MnQwMDFnM3ZwY3FpazMzbXh2In0.tUxJlLvBXq19DPAaYyDqHA";
+    
     let mapid = params.mapid;
     let view = params.view || [0, 0];
     let zoom = params.zoom || 6;
@@ -68,6 +68,7 @@ class MapInterface {
         this.drawnItem = layer;
         drawnItems.addLayer(layer);
         console.log("created marker");
+        // Popup mit verschiedenen Eingabefeldern erstellen
         var popupString = `
           <form name="createGebirge" action="/gebirge" method="post" onsubmit="return pruefen()">
             <input id="name" name="name" value="" placeholder="name">
@@ -89,9 +90,8 @@ class MapInterface {
     }
 }
 
-
-
-
+// Funktion, um Wikipedia Snippet aus dem entsprechendem Artikel in die Beschreibung
+// in der Tabelle zu speichern. 
 var snippet;
 function showWikipedia() {
   let xhttp = new XMLHttpRequest()
@@ -121,7 +121,7 @@ function showWikipedia() {
      
   }
   
-
+ // Funktion, um bestimmte HTML Elemente aus dem Wikipedia Snippet in lesbare Zeichen zu übersetzen 
   function escapeHtml(unsafe) {
     return unsafe.replaceAll('&amp;', '&').replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&quot;', '"');
 }

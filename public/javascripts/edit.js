@@ -21,7 +21,7 @@ async function getMountain(){
 }
 
 /**
-* @desc fill table
+* @desc Tabelle für gespeicherte Gebirge erstellen
 * @param data Featurecollection fetched from server
 */
 function fillTable(data){
@@ -46,7 +46,7 @@ function fillTable(data){
 }
 
 /**
-* @desc look at table and submit the delete request
+* @desc Zu löschende Spalte auswählen und löschen
 */
 async function submitData(){
   const tableRows = document.getElementsByName("deleteID");
@@ -93,11 +93,7 @@ const map = new mapboxgl.Map({
   );
  
   
-
-// Button hinzufügen, der die Funktion aufruft, aus den Koordinaten der gespeicherten Gebirge in der Tabelle
-// Marker zu erstellen:
-
-
+// Die in der Tabelle gespeicherten Gebirge auf der Mapbox Karte mit einem Marker anzeigen lassen
 var saved = [];
 function setMarker(data){
 for(gebirge of data.features){

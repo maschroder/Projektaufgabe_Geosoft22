@@ -21,4 +21,5 @@ function showWeather() {
        console.log(res)
      }}} 
 
- // Anfrage gibt 404 (Not Found) Error in der Console  
+ // Anfrage gibt 404 (Not Found) Error in der Console. Liegt das ggf. am API key? Dementsprechend konnten wir an dieser Funktionalität
+ // nicht weiter arbeiten und der Button auf der home page ist Stand jetzt nicht ausführbar.
