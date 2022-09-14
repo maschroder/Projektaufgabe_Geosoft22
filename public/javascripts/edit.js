@@ -114,7 +114,7 @@ function addRowHandlers() {
   var rows = table.getElementsByTagName("tr");
   for (i = 1; i < rows.length; i++) {
     row = table.rows[i];
-    row.onclick = setPopup(){
+    row.onclick = function setPopup(){
       var cell = this.getElementsByTagName("th")[0];
       var id = cell.innerHTML;
       new mapboxgl.Popup()
