@@ -109,6 +109,37 @@ function setMarker(data) {
 }
 
 
+/* Hier haben wir versucht die Marker beim Klicken in der Tabelle hervorzuheben.
+Die Funktion müsste in edit.ejs Datei in Zeile 35 mit zum Beispiel onclick="onMapClick()" aufgerufen werden.
+Das klappt aber noch nicht ganz
+*/
+
+/*
+function addRowHandlers() {
+  var table = document.getElementById("deleteTable");
+  var rows = table.getElementsByTagName("th");
+  for (i = 1; i < rows.length; i++) {
+    row = table.rows[i];
+    row.onclick = function(){
+      new mapboxgl.Popup()
+        .setLngLat(coords[0], coords[1])
+        .setHTML('<h1>Hello World!</h1>')
+        .addTo(map);
+    };
+  }
+}
+*/
+
+/*
+function onMapClick(e) {
+  var popup = L.popup()
+  .setLatLng(e.latlng)
+  .setContent("<table><tr><td>Cell 1</td><td>Cell 2</td></tr></table>")
+  .openOn(map);
+  var lat = marker.getLatLng().lat;
+  var lng = marker.getLatLng().lng;
+};
+*/
 
 
 
