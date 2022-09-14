@@ -108,7 +108,7 @@ function setMarker(data) {
   }
 }
 
-
+// Funktion, um Marker hervorzuheben, wenn man auf Tabelleneintrag klickt
 function addRowHandlers() {
   var table = document.getElementById("deleteTable");
   var rows = table.getElementsByTagName("tr");
