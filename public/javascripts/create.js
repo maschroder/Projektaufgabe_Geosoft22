@@ -95,7 +95,9 @@ class MapInterface {
 var snippet;
 function showWikipedia() {
   let xhttp = new XMLHttpRequest()
-  xhttp.open("GET", "http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=*&format=json" + "&origin=*", true)
+  // Für srsearch haben wir Mont Blanc drin gelasse, damit überhaupt eine Beschreibung in die Tabelle gepostet wird.
+  // Wir haben sämtliche Templates und Varianten ausproviert, bekommen aber immer undefined 
+  xhttp.open("GET", "http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=Mont Blanc&format=json" + "&origin=*", true)
   xhttp.send()
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200){
