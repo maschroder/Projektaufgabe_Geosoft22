@@ -1,4 +1,4 @@
-async function main(){
+async function main() {
   const mountains = await getMountain();
   fillTable(mountains);
   setMarker(mountains)
@@ -9,7 +9,7 @@ async function main(){
 * @desc fetches all Mountains from server
 */
 var data;
-async function getMountain(){
+async function getMountain() {
   const response = await fetch('/gebirge').then(
     response => response.json()
   ).then(data => {
@@ -24,11 +24,11 @@ async function getMountain(){
 * @desc Tabelle für gespeicherte Gebirge erstellen
 * @param data Featurecollection fetched from server
 */
-function fillTable(data){
+function fillTable(data) {
   const tableBody = document.getElementById("tableBody");
   let tableHTML = ""
 
-  for(gebirge of data.features){
+  for (gebirge of data.features) {
     tableHTML += `
     <tr>
     <td>${gebirge.properties.name}</td>
@@ -48,13 +48,13 @@ function fillTable(data){
 /**
 * @desc Zu löschende Spalte auswählen und löschen
 */
-async function submitData(){
+async function submitData() {
   const tableRows = document.getElementsByName("deleteID");
 
   let toDelete = [];
 
-  for(row of tableRows){
-    if(row.checked){
+  for (row of tableRows) {
+    if (row.checked) {
       toDelete.push(row.value);
     }
   }
@@ -64,8 +64,8 @@ async function submitData(){
 
   let redirect = await fetch('/gebirge', {
     method: 'DELETE',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({ids: toDelete})
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ids: toDelete })
   })
   //reload to update
   location.reload(true);
@@ -81,30 +81,52 @@ const map = new mapboxgl.Map({
   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
   style: 'mapbox://styles/mapbox/streets-v11',
   // lat/lon musste vertauscht werden
-  center: [7.5, 54.508 ],
+  center: [7.5, 54.508],
   zoom: 3.5
-  });
-   
-  map.addControl(
+});
+
+map.addControl(
   new MapboxDirections({
-  accessToken: mapboxgl.accessToken
+    accessToken: mapboxgl.accessToken
   }),
   'top-right'
-  );
- 
-  
+);
+
+
 // Die in der Tabelle gespeicherten Gebirge auf der Mapbox Karte mit einem Marker anzeigen lassen
 var saved = [];
-function setMarker(data){
-for(gebirge of data.features){
-  let coords = gebirge.geometry.coordinates
-  console.log(coords)
-  saved.push(coords);
-  console.log(saved)
-  const marker1 = new mapboxgl.Marker()
-.setLngLat([coords[0], coords[1]])
-.addTo(map);
+function setMarker(data) {
+  for (gebirge of data.features) {
+    let coords = gebirge.geometry.coordinates
+    console.log(coords)
+    saved.push(coords);
+    console.log(saved)
+    const marker1 = new mapboxgl.Marker()
+      .setLngLat([coords[0], coords[1]])
+      .addTo(map);
 
-}}
+  }
+}
+
+
+function addRowHandlers() {
+  var table = document.getElementById("deleteTable");
+  var rows = table.getElementsByTagName("tr");
+  for (i = 1; i < rows.length; i++) {
+    row = table.rows[i];
+    row.onclick = setPopup(){
+      var cell = this.getElementsByTagName("th")[0];
+      var id = cell.innerHTML;
+      new mapboxgl.Popup()
+        .setLngLat(coords[0], coords[1])
+        .setHTML('<h1>Hello World!</h1>')
+        .addTo(map);
+    };
+  }
+}
+
+
+
+
 
 
