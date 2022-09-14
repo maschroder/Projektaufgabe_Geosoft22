@@ -95,7 +95,7 @@ class MapInterface {
 var snippet;
 function showWikipedia() {
   let xhttp = new XMLHttpRequest()
-  xhttp.open("GET", "http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch={gesuchterBerg}&format=json" + "&origin=*", true)
+  xhttp.open("GET", "http://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=*&format=json" + "&origin=*", true)
   xhttp.send()
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200){
